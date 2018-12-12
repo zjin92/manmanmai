@@ -1,0 +1,85 @@
+/* 定义变量 */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+li {
+  list-style: none;
+}
+img {
+  /* 解决图标3px的问题 */
+  vertical-align: middle;
+}
+/* 因为MUI帮你写了样式初始化不需要写了 只要使用框架 都不需要写样式初始化 */
+/* 第一张方案 加padding 给 main相对定位个固定高度 */
+body {
+  padding: 0.45rem 0;
+  height: 100vh;
+}
+#main {
+  /* 继承body内容的高度 */
+  height: 100%;
+  /* 给main设置相对定位 以为MUI区域滚动的容器设置了绝对定位 */
+  position: relative;
+}
+/* 第二张方案 直接修改定位值 */
+/* .mui-scroll-wrapper{
+	top: 0.45rem;
+	bottom: 0.45rem;
+} */
+/* 头部的公共样式 */
+#header {
+  background-color: #006699;
+  display: flex;
+  /* 给父元素设置padding把内容往中间挤  2边如果有图标 使用定位 左边定位在左边 右边定位在右边 */
+  padding-left: 0.45rem;
+  padding-right: 0.45rem;
+  height: 0.45rem;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+#header h4 {
+  margin: 0;
+  width: 2.85rem;
+  text-align: center;
+  line-height: 0.45rem;
+  font-weight: normal;
+}
+#header a {
+  width: 0.45rem;
+  height: 0.45rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+  line-height: 0.45rem;
+  color: #fff;
+}
+/* 底部的公共样式 */
+#footer {
+  width: 100vw;
+  height: 0.45rem;
+  background-color: #006699;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+#footer ul {
+  display: flex;
+}
+#footer ul li {
+  width: 25vw;
+}
+#footer ul li a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 0.085rem;
+}
+#footer ul li a span {
+  display: block;
+}
